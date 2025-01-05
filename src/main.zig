@@ -16,7 +16,7 @@ const Color = struct {
 
 const TARGET_WIDTH = 100;
 const TARGET_HEIGHT = 20;
-const TARGET_CAP = 12;
+const TARGET_CAP = 18;
 
 const Target = struct {
     x: i32,
@@ -30,7 +30,7 @@ const Target = struct {
 var targets_pool: [TARGET_CAP]Target = undefined;
 var targets_pool_count: usize = 0;
 
-const WINDOW_WIDTH = 400;
+const WINDOW_WIDTH = 800;
 const WINDOW_HEIGHT = 600;
 const FPS: i32 = 60;
 const DELTA_TIME_SEC: f32 = 1.0 / @as(f32, @floatFromInt(FPS));
@@ -91,7 +91,7 @@ fn generate_target(x: i32, y: i32) void {
 
 const TARGET_PADDING = 10;
 const TARGET_BASE = (WINDOW_WIDTH - (TARGET_WIDTH) * number_of_bars) / 2 - 2 * TARGET_PADDING;
-const number_of_bars = 2;
+const number_of_bars = 6;
 
 fn initialize_targets() void {
     for (1..12) |_| {
@@ -172,7 +172,7 @@ pub fn main() anyerror!void {
     }
     defer c.SDL_Quit();
 
-    const window = c.SDL_CreateWindow("Main", 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, c.SDL_WINDOW_RESIZABLE) orelse {
+    const window = c.SDL_CreateWindow("Breakout", 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, c.SDL_WINDOW_RESIZABLE) orelse {
         c.SDL_Log("Unable to initialize SDL: %s", c.SDL_GetError());
         return error.SDLInitializationFailed;
     };
