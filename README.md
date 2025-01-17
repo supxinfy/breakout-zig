@@ -16,6 +16,10 @@ This project is a simple implementation of the classic Breakout game using the Z
 
 I was inspired by tsoding and his project [zigout](https://github.com/tsoding/zigout). So I'm sorry if my code have quite a resemblance of his. You can check out his [stream](https://www.youtube.com/watch?v=eIX9zER9vjY) as well.
 
+Here is a picture of the game: 
+
+![Breakout game](assets/breakout.png)
+
 ## Features
 
 - Classic Breakout gameplay
